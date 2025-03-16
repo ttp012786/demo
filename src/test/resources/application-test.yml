@@ -1,0 +1,7 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:${TESTCONTAINERS_POSTGRES_PORT}/testdb
+    username: test
+    password: test
+  flyway:
+    enabled: false # Disable Flyway for testing unless needed
