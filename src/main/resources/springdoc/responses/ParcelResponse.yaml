@@ -1,0 +1,11 @@
+type: object
+properties:
+  id:
+    type: string
+    example: "223e4567-e89b-12d3-a456-426614174000"
+  guestId:
+    type: string
+    example: "123e4567-e89b-12d3-a456-426614174000"
+  description:
+    type: string
+    example: "Amazon Package"

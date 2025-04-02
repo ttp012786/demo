@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    type: string
+    example: "123e4567-e89b-12d3-a456-426614174000"
+  name:
+    type: string
+    example: "John Doe"
+  roomNumber:
+    type: string
+    example: "101"
+  checkedIn:
+    type: boolean
+    example: true
+  checkedOutAt:
+    type: string
+    format: date-time
+    example: "2025-04-02T10:00:00Z"

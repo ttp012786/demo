@@ -1,0 +1,63 @@
+post:
+  summary: Register a parcel for a guest
+  operationId: registerParcel
+  tags:
+    - Parcels
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../requests/ParcelRequest.yaml"
+  responses:
+    "201":
+      description: Parcel registered successfully
+      content:
+        application/json:
+          schema:
+            $ref: "../responses/ParcelResponse.yaml"
+    "400":
+      description: Invalid input (e.g., missing required fields)
+      content:
+        application/json:
+          schema:
+            $ref: "../responses/ErrorResponse.yaml"
+    "404":
+      description: Guest not found
+      content:
+        application/json:
+          schema:
+            $ref: "../responses/ErrorResponse.yaml"
+
+get:
+  summary: Get parcels for a specific guest
+  operationId: getParcelsForGuest
+  tags:
+    - Parcels
+  parameters:
+    - name: guestId
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: List of parcels for the guest
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../responses/ParcelResponse.yaml"
+    "400":
+      description: Invalid guest ID
+      content:
+        application/json:
+          schema:
+            $ref: "../responses/ErrorResponse.yaml"
+    "404":
+      description: Guest not found or no parcels available
+      content:
+        application/json:
+          schema:
+            $ref: "../responses/ErrorResponse.yaml"

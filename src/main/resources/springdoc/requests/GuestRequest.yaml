@@ -1,0 +1,11 @@
+type: object
+properties:
+  name:
+    type: string
+    example: "John Doe"
+  roomNumber:
+    type: string
+    example: "101"
+required:
+  - name
+  - roomNumber

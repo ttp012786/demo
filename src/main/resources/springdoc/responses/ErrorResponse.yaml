@@ -1,0 +1,8 @@
+type: object
+properties:
+  message:
+    type: string
+    example: "Invalid input provided"
+  code:
+    type: integer
+    example: 400

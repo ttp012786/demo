@@ -1,7 +1,13 @@
 spring:
   r2dbc:
-    url: r2dbc:postgresql://localhost:${TESTCONTAINERS_POSTGRES_PORT}/testdb
-    username: test
-    password: test
+    url: r2dbc:postgresql://localhost:5432/testdb
+    username: testuser
+    password: testpass
+    pool:
+      max-size: 20
+
   flyway:
-    enabled: false # Disable Flyway for testing unless needed
+    enabled: true
+    locations:
+      - classpath:db/migration/schema
+      - classpath:db/migration/test

@@ -1,0 +1,24 @@
+post:
+  summary: Register guest check-in
+  operationId: registerGuest
+  tags:
+    - Guests
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../requests/GuestRequest.yaml"
+  responses:
+    "201":
+      description: Guest registered successfully
+      content:
+        application/json:
+          schema:
+            $ref: "../responses/GuestResponse.yaml"
+    "400":
+      description: Invalid input (e.g., missing required fields)
+      content:
+        application/json:
+          schema:
+            $ref: "../responses/ErrorResponse.yaml"
