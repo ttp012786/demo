@@ -1,0 +1,11 @@
+openapi: 3.0.0
+info:
+  title: Parcel Tracking API
+  description: API for tracking guest check-ins and parcel management
+  version: 1.0.0
+
+paths:
+  /guests:
+    $ref: "./apis/guests.yaml"
+  /parcels:
+    $ref: "./apis/parcels.yaml"

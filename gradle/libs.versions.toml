@@ -1,0 +1,48 @@
+[versions]
+spring-boot = "3.4.3"
+springdoc = "2.8.5"
+r2dbc-postgresql = "1.0.7.RELEASE"
+mapstruct = "1.6.3"
+testcontainers = "1.20.6"
+junit-jupiter = "5.10.0"
+lombok = "1.18.36"
+openapi-plugin = "7.12.0"
+flyway = "11.5.0"
+
+[libraries]
+# Spring Boot Starters
+spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "spring-boot" }
+spring-boot-starter-data-r2dbc = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc", version.ref = "spring-boot" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
+spring-boot-test-autoconfigure = { module = "org.springframework.boot:spring-boot-test-autoconfigure", version.ref = "spring-boot" }
+
+# Database (R2DBC + PostgreSQL)
+r2dbc-postgresql = { module = "org.postgresql:r2dbc-postgresql", version.ref = "r2dbc-postgresql" }
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway"}
+
+# API Documentation (Swagger)
+springdoc-openapi-starter-webflux-ui = { module = "org.springdoc:springdoc-openapi-starter-webflux-ui", version.ref = "springdoc" }
+jackson-databind-nullable = { module = "org.openapitools:jackson-databind-nullable", version = "0.2.6" }
+
+# MapStruct (DTO Mapping)
+mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
+
+# Lombok (Reduces Boilerplate)
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+lombok-mapstruct-binding = { module = "org.projectlombok:lombok-mapstruct-binding", version = "0.2.0" }
+
+# JUnit 5 + Testcontainers (Testing)
+spring-boot-testcontainers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+testcontainers = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-junit = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+
+[plugins]
+openapi-generator = { id = "org.openapi.generator", version.ref = "openapi-plugin" }
+
+[bundles]
+lombokWithMapstruct = ["lombok", "mapstruct", "lombok-mapstruct-binding"]
+lombokWithMapstruct-annotationprocessor = ["lombok", "mapstruct-processor"]
